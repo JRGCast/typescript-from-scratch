@@ -1,5 +1,6 @@
 # typescript-from-scratch
-- Aprendendo a instalar o typescript e outras configurações do zero;
+1. Aprendendo a instalar o typescript e outras configurações do zero;
+2. Utilizando o TS;
 
 
 ## Pré-TS e TS:
@@ -8,7 +9,7 @@
 3. Instalar o typescript como DEV DEPENDENCIES (já que ele só é feito para auxiliar no desenvolvimento), com o comando npm i typescript -D. Obs.: instalar localmente pode levar a futuros conflitos de versões entre projetos, mas nada que uma atualização não resolva;
 4. Veja que foi criada a pasta .bin, contendo 'tsc' e 'tsserver', bem como a pasta typescript;
 
-#### Typescript não é uma linguagem compilada. Ou seja, é necessário compilar antes de rodar o código;
+*Typescript não é uma linguagem compilada. Ou seja, é necessário compilar antes de rodar o código*;
 - Porém é possível 'acelerar' o desenvolvimento com a extensão ts node (npm i ts-node -D);
 - É possível configurá-lo com um arquivo tsconfig.json (leia a doc em  [https://www.npmjs.com/package/ts-node#via-tsconfigjson-recommended] ), mas aqui utilizaremos a configuração do code-runner no VSCODE;
 
@@ -43,3 +44,14 @@
 5. O 'strict' é a aplicação de diversas regras para restringir a 'codação';
 6. O "esModuleInterop": true é para conseguir utilizar o export e import (o node, por padrão, não suporta);
 7. A cada compilação, sobrescreverá os arquivos de mesmo nome e adicionará os novos, *CONTUDO NÃO ELIMINA ARQUIVOS*, então é sempre interessante apagar a pasta ./dist em novas compilações, para que não continuem arquivos porventura apagados;
+
+
+### Configuração WEBPACK:
+1. Instale as devDependencies necessárias com o comando npm i ts-loader webpack webpack-cli -D;
+2. Configure o WEBPACK com um arquivo na raiz webpack.config.js (também pode ser .json). Há uma opção 'default' na doc em [https://webpack.js.org/guides/typescript/];
+- As propriedades mais importantes são entry (que irá verificar o primeiro arquivo a ser lido pelo WEBPACK, e a partir dele encontrará os demais), output(que configura o nome do arquivo de saída e o local), e module (que irá procurar arquivos pela extensão lá configurada);
+- Não esqueça de adequar as entradas e saídas tsconfig.js ou .json com as do webpack.config (outDir daquele com output deste);
+- É oportuno acrescentar no arquivo webpack a propriedade devtool, com a propriedade 'source-map', pois, ajuda no eventual debug;
+- Também pode colocar a propriedade mode:'development', apenas para observar e aprender, pois, com esse modo, ele não minificará o arquivo bundle, que é um dos objetivos do webpack;
+- Rode o comando local npx webpack;
+
