@@ -1,3 +1,3 @@
 export default function concole(a: string) {
-  return `a`;
+  return `Message ${a}`;
 }

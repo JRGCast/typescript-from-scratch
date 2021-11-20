@@ -52,6 +52,7 @@
 - As propriedades mais importantes são entry (que irá verificar o primeiro arquivo a ser lido pelo WEBPACK, e a partir dele encontrará os demais), output(que configura o nome do arquivo de saída e o local), e module (que irá procurar arquivos pela extensão lá configurada);
 - Não esqueça de adequar as entradas e saídas tsconfig.js ou .json com as do webpack.config (outDir daquele com output deste);
 - É oportuno acrescentar no arquivo webpack a propriedade devtool, com a propriedade 'source-map', pois, ajuda no eventual debug;
-- Também pode colocar a propriedade mode:'development', apenas para observar e aprender, pois, com esse modo, ele não minificará o arquivo bundle, que é um dos objetivos do webpack;
+- Também pode colocar no webpack a propriedade mode:'development', apenas para observar e aprender, pois, com esse modo, ele não minificará o arquivo bundle, que é um dos objetivos do webpack;
+- Esse objetivo vale para arquivos html, css (e suas 'variações', como scss, sass) e js e demais suportados pelo webpack;
 - Rode o comando local npx webpack;
 
